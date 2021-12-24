@@ -52,3 +52,26 @@ validateArray( array: number[] ): boolean{
     return true;
   }
 ```
+
+### Ejecutar el proyecto
+En el front:
+```
+npm install
+```
+```
+ng serve
+```
+
+En el back
+```
+npm install
+```
+```
+node server.js
+```
+
+### Otra alternativa 
+Al momento de analizar el problema, se me ocurrio otra forma de abordarlo. 
+Se crea una bd con 3 tablas: cartas, tablas y cartas_tablas(relación entre ambas para agregar las cartas que contendra una tabla)
+Cada vez que el usuario solicite crear tablas, se crean y se guardan en la BD. Si el usuario pide más tablas de las que se tienen creadas, solo se crearia el excedente, por ejemplo: Si tenemos 10 guardadas en la bd y el usuario pide 16, unicamente se crean las 6 extras.
+En el caso de que el usuario pida menos de las que tenemos, se solicitarian al back los id random de las tablas.
